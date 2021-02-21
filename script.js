@@ -9,6 +9,44 @@ var speed = 750;
 var n = 0;
 var myInterval = -1;
 
+
+var amountBooks;
+//create localStorage for number of books in library or fetch the amount if it has already been initialized
+window.onload = function(){
+if(localStorage.getItem("amountBooks") != null){
+        amountBooks = parseInt(localStorage.getItem("amountBooks"));
+}
+else {
+        localStorage.setItem("amountBooks","0");
+        amountBooks = 0;
+}
+}
+
+
+//function to show all the added books in the library
+window.onload = function(){
+    //fetching all the books from the local storage and putting them into an array
+        var bookArray = [];
+    for(let i = 0;i < amountBooks;i++){
+        
+        var book = localStorage.getItem("Book" + i.toString());
+        bookArray.push(book);
+
+    }
+    
+    //creating a label for each book in the library and displaying it through html
+        var libraryDiv = document.getElementById("book-library");
+    for(let y = 0;y<bookArray.length;y++){
+        var newPara = document.createElement("p");
+        var newLabelForBook = document.createTextNode(bookArray[y]);
+        newPara.appendChild(newLabelForBook);
+
+        libraryDiv.appendChild(newPara);
+    }
+
+}
+
+
 startButton.addEventListener("click", function (event) {
     //if paused start
 
@@ -16,6 +54,8 @@ startButton.addEventListener("click", function (event) {
         document.getElementById("intro-screen").style.display = "none";
         document.getElementById("main-screen").style.display = "block";
         startButton.innerHTML = "PAUSE";
+
+       
 
         //slider edits
         
@@ -76,6 +116,16 @@ input.addEventListener('change', function () {
         const file = e.target.result;
         const lines = file.split(/\s+/);
         words = lines;
+
+         //getting the name of the file so we can store it in localStorage
+         var parts = input.value.split("\\");
+         var fileName = parts[parts.length - 1];
+         
+         //put the bookname in the localstorage so we can access it later and save it into the library/ increase the book amount accordingly
+         alert("Book" + amountBooks.toString());
+         localStorage.setItem("Book" + amountBooks.toString(),fileName);
+         ++amountBooks;
+         localStorage.setItem("amountBooks",amountBooks.toString());
 
     };
 
