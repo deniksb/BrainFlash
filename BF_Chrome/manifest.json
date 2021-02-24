@@ -1,0 +1,14 @@
+{
+    "name": "BrainFlash",
+    "version": "0.1",
+    "description": "Paste your text and let it be flashed into your brain.",
+
+     "icons": {"128": "nakata_icon.png"},
+     "browser_action": {
+      "default_icon": "nakata_icon.png",
+      "default_popup": "popup.html"
+     },
+     
+    "manifest_version": 2,
+    "permissions": ["activeTab"]
+  }
