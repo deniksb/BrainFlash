@@ -110,4 +110,19 @@ optionsButton.addEventListener("click", function(){
 } );
 
 
+window.onload = function(){
+    if(localStorage.getItem("text") != "null"){
+        textArea.value = localStorage.getItem("text");
+        localStorage.setItem("text",null);
+        startButton.click();
+    }
+    else if(localStorage.getItem("text") == "null") {
+        textArea.value = "Paste text here!";
+    }
+    
+}
+
+
+
+
 
