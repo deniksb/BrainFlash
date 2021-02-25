@@ -69,7 +69,7 @@ slider.oninput = function () {
     myInterval = -1;
     speed = slider.value * 15;
     output.innerHTML = slider.value * 15;
-    startButton.click();
+    // startButton.click();
 }
 
 
@@ -87,3 +87,27 @@ sliderNav.oninput = function () {
     
     startButton.click();
 }
+
+
+
+var optionsButton = document.getElementById("options-button");
+//function for the more options button
+optionsButton.addEventListener("click", function(){
+
+    var butt = document.getElementById("options-button");
+    var optionsDiv =   document.getElementById("more-options");
+    if(butt.innerHTML == "More"){
+        butt.innerHTML = "Less";
+        optionsDiv.style.display = "block";
+    }
+    else {
+        butt.innerHTML = "More";
+        optionsDiv.style.display = "none";
+        }
+
+
+
+} );
+
+
+

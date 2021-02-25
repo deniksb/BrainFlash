@@ -4,27 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+      html{
+        width: 265px ;
+        height: 100px;
+      }
+      body{
+        width: 265px ;
+        height: 100px;
+      }
+
+    </style>
     <title>BrainFlash</title>
     <style>
     </style>
   </head>
   <body>
     <div id="intro-screen">
-      <textarea id="text-area" name="Paste text here" id="" cols="30" rows="10" ></textarea>
+      <textarea id="text-area" name="Paste text here" id="" cols="30" rows="10"></textarea>
     </div>
 
     <button id="start-button">START</button>
 
     <div id="main-screen" style="display: none;">
-      <p id="display-word">Text will show here!</p>
-      <p>Navigate</p>
-      <input type="range" min="1" max="100" value="1" class="slider"
-        id="navigation-range">
-      <p id="slider-nav">1</p>
+      <p id="display-word" style="font-size: large;">Text will show here!</p>
+      <button id="options-button">More</button>
 
-      <p>Delay</p>
-      <input type="range" min="1" max="100" value="50" id="myRange">
-      <p id="slider-speed">750</p>
+      <div id="more-options" style="display: none;">
+        <p>Navigate</p>
+        <input type="range" min="1" max="100" value="1" class="slider"
+          id="navigation-range">
+        <p id="slider-nav">1</p>
+
+        <p>Delay</p>
+        <input type="range" min="1" max="100" value="50" id="myRange">
+        <p id="slider-speed">750</p>
+
+        
+
+
+
+      </div>
+
     </div>
 
 
