@@ -65,11 +65,10 @@ output.innerHTML = slider.value * 15; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function () {
-    clearInterval(myInterval);
-    myInterval = -1;
+    startButton.click();
     speed = slider.value * 15;
     output.innerHTML = slider.value * 15;
-    // startButton.click();
+    
 }
 
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <style>
       html{
         width: 265px ;
@@ -12,32 +13,43 @@
       body{
         width: 265px ;
         height: 100px;
+        text-align: center;
+       
       }
+
+     
 
     </style>
     <title>BrainFlash</title>
-    <style>
-    </style>
+    
   </head>
-  <body>
-    <div id="intro-screen">
-      <textarea id="text-area" name="Paste text here" id="" cols="30" rows="10"></textarea>
+  <body class="p-3 mb-2 bg-dark text-white">
+
+    <div id="everything">
+<div id="intro-screen" class="container">
+      <textarea class="form-control" id="text-area" name="Paste text here" id="" cols="30" rows="10"></textarea>
+      <br>
     </div>
+    
+    <div class="container">
+      <button id="start-button" class="btn btn-danger">START</button>
+    </div>
+    
 
-    <button id="start-button">START</button>
-
-    <div id="main-screen" style="display: none;">
-      <p id="display-word" style="font-size: large;">Text will show here!</p>
-      <button id="options-button">More</button>
-
+    <div id="main-screen" style="display: none;" >
+      <br>
+      <p class="h2" id="display-word" style="font-size: large;">Text will show here!</p>
+      <br>
+      <button id="options-button" class="btn btn-light">More</button>
+      
       <div id="more-options" style="display: none;">
         <p>Navigate</p>
-        <input type="range" min="1" max="100" value="1" class="slider"
+        <input class="form-range" type="range" min="1" max="100" value="1" class="slider"
           id="navigation-range">
         <p id="slider-nav">1</p>
 
         <p>Delay</p>
-        <input type="range" min="1" max="100" value="50" id="myRange">
+        <input class="form-range " type="range" min="1" max="100" value="50" id="myRange">
         <p id="slider-speed">750</p>
 
         
@@ -47,6 +59,14 @@
       </div>
 
     </div>
+
+
+    </div>
+  
+ 
+
+    
+   
 
 
     <script src="popup.js"></script>
