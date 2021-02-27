@@ -32,15 +32,31 @@ startButton.addEventListener("click", function (event) {
         
         sliderNav.max = words.length;
         
+        
 
         myInterval = setInterval(function () {
             // if (n > 0) {
 
             //     secondaryWordDisplay.innerHTML = words[n - 1];
             // }
+            var format = /[ `!@#$%^&*_+\-=\[\]{};':"\\|,.<>\/?~]/;
             if (words[n] == undefined) {
                 clearInterval(myInterval);
-            } else {
+            }
+            else if(format.test(words[n].slice(-1)) && words[n].length > 1){
+                wordDisplay.innerHTML = words[n].slice(0, -1);
+                var symbol = words[n].slice(-1);
+                words[n] = symbol;
+            } 
+            else if(words[n].length == 1 ){
+                
+                wordDisplay.innerHTML = words[n];
+                outputNav.innerHTML = n+1;
+                sliderNav.value = n+1;
+                n++;
+            }
+            else {
+                
                 wordDisplay.innerHTML = words[n];
                 outputNav.innerHTML = n+1;
                 sliderNav.value = n+1;
@@ -116,7 +132,7 @@ window.onload = function(){
         startButton.click();
     }
     else if(localStorage.getItem("text") == "null") {
-        textArea.value = "Paste text here!";
+        textArea.value = "";
     }
     
 }
