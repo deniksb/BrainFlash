@@ -26,7 +26,7 @@ function contextMenuHandler(info, tab) {
             code: "window.getSelection().toString();"
         }, function (selection) {
             highlightedText = selection[0];
-            chrome.tabs.create({ url: "popup.html" });
+            chrome.tabs.create({ url: "popup_tab.html" });
             localStorage.setItem("text", highlightedText);
 
         });
