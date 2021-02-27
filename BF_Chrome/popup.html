@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous">
     <style>
       html{
         width: 265px ;
@@ -17,59 +21,61 @@
        
       }
 
-     
-
     </style>
     <title>BrainFlash</title>
-    
+
   </head>
   <body class="p-3 mb-2 bg-dark text-white">
 
     <div id="everything">
-<div id="intro-screen" class="container">
-      <textarea class="form-control bg-light" id="text-area" name="Paste text here" placeholder = "Paste text here!" id="" cols="30" rows="10"></textarea>
-      <br>
-    </div>
-    
-    <div class="container">
-      <button id="start-button" class="btn btn-danger">START</button>
-    </div>
-    
+      <div id="intro-screen" class="container">
+        <textarea class="form-control bg-light" id="text-area" name="Paste text
+          here" placeholder="Paste text here!" id="" cols="30" rows="10"></textarea>
+        <br>
+      </div>
 
-    <div id="main-screen" style="display: none;" >
-      <br>
-      <p class="h2" id="display-word" style="font-size: large;">Text will show here!</p>
-      <br>
-      <button id="options-button" class="btn btn-light">More</button>
-      
-      <div id="more-options" style="display: none;">
-        <p>Navigate</p>
-        <input class="form-range" type="range" min="1" max="100" value="1" class="slider"
-          id="navigation-range">
-        <p id="slider-nav">1</p>
-
-        <p>Delay</p>
-        <input class="form-range " type="range" min="1" max="100" value="50" id="myRange">
-        <p id="slider-speed">750</p>
-
-        
+      <div class="container">
+        <button id="start-button" class="btn btn-danger">START</button>
+      </div>
 
 
+      <div id="main-screen" style="display: none;">
+        <br>
+        <p class="h2" id="display-word" style="font-size: large;">Text will show
+          here!</p>
+        <br>
+        <button id="options-button" class="btn btn-light">More</button>
+
+        <div id="more-options" style="display: none;">
+          <p>Navigate</p>
+          <input class="form-range" type="range" min="1" max="100" value="1"
+            class="slider"
+            id="navigation-range">
+          <p id="slider-nav">1</p>
+
+          <p>Delay</p>
+          <input class="form-range"type="range" min="1" max="100" value="50"
+            id="myRange">
+          <p id="slider-speed">750</p>
+
+
+
+
+
+        </div>
 
       </div>
 
-    </div>
-
 
     </div>
-  
- 
 
-    
-   
+
+
+
+
 
 
     <script src="popup.js"></script>
-    
+
   </body>
 </html>

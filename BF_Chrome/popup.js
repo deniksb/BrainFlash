@@ -24,15 +24,15 @@ startButton.addEventListener("click", function (event) {
         document.getElementById("intro-screen").style.display = "none";
         document.getElementById("main-screen").style.display = "block";
         startButton.innerHTML = "PAUSE";
-        
 
-       
+
+
 
         //slider edits
-        
+
         sliderNav.max = words.length;
-        
-        
+
+
 
         myInterval = setInterval(function () {
             // if (n > 0) {
@@ -43,23 +43,23 @@ startButton.addEventListener("click", function (event) {
             if (words[n] == undefined) {
                 clearInterval(myInterval);
             }
-            else if(format.test(words[n].slice(-1)) && words[n].length > 1){
+            else if (format.test(words[n].slice(-1)) && words[n].length > 1) {
                 wordDisplay.innerHTML = words[n].slice(0, -1);
                 var symbol = words[n].slice(-1);
                 words[n] = symbol;
-            } 
-            else if(words[n].length == 1 ){
-                
+            }
+            else if (words[n].length == 1) {
+
                 wordDisplay.innerHTML = words[n];
-                outputNav.innerHTML = n+1;
-                sliderNav.value = n+1;
+                outputNav.innerHTML = n + 1;
+                sliderNav.value = n + 1;
                 n++;
             }
             else {
-                
+
                 wordDisplay.innerHTML = words[n];
-                outputNav.innerHTML = n+1;
-                sliderNav.value = n+1;
+                outputNav.innerHTML = n + 1;
+                sliderNav.value = n + 1;
                 n++;
             }
 
@@ -81,10 +81,13 @@ output.innerHTML = slider.value * 15; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function () {
-    startButton.click();
+    if(startButton.innerHTML == "PAUSE"){
+        startButton.click();
+    }
+    
     speed = slider.value * 15;
     output.innerHTML = slider.value * 15;
-    
+
 }
 
 
@@ -92,14 +95,14 @@ slider.oninput = function () {
 //slider navigation code
 
 var sliderNav = document.getElementById("navigation-range");
-var outputNav = document.getElementById("slider-nav"); 
+var outputNav = document.getElementById("slider-nav");
 
 // Update the current slider value (each time you drag the slider handle)
 sliderNav.oninput = function () {
     clearInterval(myInterval);
     myInterval = -1;
-    n = sliderNav.value-1;
-    
+    n = sliderNav.value - 1;
+
     startButton.click();
 }
 
@@ -107,34 +110,34 @@ sliderNav.oninput = function () {
 
 var optionsButton = document.getElementById("options-button");
 //function for the more options button
-optionsButton.addEventListener("click", function(){
+optionsButton.addEventListener("click", function () {
 
     var butt = document.getElementById("options-button");
-    var optionsDiv =   document.getElementById("more-options");
-    if(butt.innerHTML == "More"){
+    var optionsDiv = document.getElementById("more-options");
+    if (butt.innerHTML == "More") {
         butt.innerHTML = "Less";
         optionsDiv.style.display = "block";
     }
     else {
         butt.innerHTML = "More";
         optionsDiv.style.display = "none";
-        }
+    }
 
 
 
-} );
+});
 
 
-window.onload = function(){
-    if(localStorage.getItem("text") != "null"){
+window.onload = function () {
+    if (localStorage.getItem("text") != "null") {
         textArea.value = localStorage.getItem("text");
-        localStorage.setItem("text",null);
+        localStorage.setItem("text", null);
         startButton.click();
     }
-    else if(localStorage.getItem("text") == "null") {
+    else if (localStorage.getItem("text") == "null") {
         textArea.value = "";
     }
-    
+
 }
 
 
