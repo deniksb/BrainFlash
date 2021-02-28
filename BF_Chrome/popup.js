@@ -11,16 +11,13 @@ var textArea = document.getElementById("text-area");
 var speed = 750;
 
 
-
-
-
 var n = 0;
 var myInterval = -1;
 
 
 startButton.addEventListener("click", function (event) {
     //if paused start
-
+    
     if (myInterval == -1) {
         var text = textArea.value;
         words = text.split(/\s+/);
