@@ -8,8 +8,11 @@ var secondaryWordDisplay = document.getElementById("secondary-display-word");
 var textArea = document.getElementById("text-area");
 
 
-
 var speed = 750;
+
+
+
+
 
 var n = 0;
 var myInterval = -1;
@@ -25,14 +28,19 @@ startButton.addEventListener("click", function (event) {
         document.getElementById("main-screen").style.display = "block";
         startButton.innerHTML = "PAUSE";
 
-
-
+        //getting saved speed from local storage
+        if(localStorage.getItem("speed") == null){
+            localStorage.setItem("speed","750");
+        }
+        else {
+            speed = parseInt(localStorage.getItem("speed"));
+        }
 
         //slider edits
 
         sliderNav.max = words.length;
-
-
+        output.innerHTML = slider.value * 15;
+        slider.value = speed / 15;
 
         myInterval = setInterval(function () {
             // if (n > 0) {
@@ -87,6 +95,7 @@ slider.oninput = function () {
     
     speed = slider.value * 15;
     output.innerHTML = slider.value * 15;
+    localStorage.setItem("speed",speed.toString());
 
 }
 
